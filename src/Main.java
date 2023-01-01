@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -46,5 +47,10 @@ public class Main {
 
     public static void main(String[] args) {
         file();
+        try (FileWriter q = new FileWriter("F:/Game/temp/temp.txt")) {
+            q.write(String.valueOf(sb));
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
